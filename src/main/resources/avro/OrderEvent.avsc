@@ -1,0 +1,117 @@
+{
+  "name": "OrderEvent",
+  "namespace": "net.mastery.load",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "doc": "Indicates what field will be populated for the event one of type [ORDER_CREATED, ORDER_UPDATED ]",
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "order_created",
+      "type": [
+        "null",
+        {
+          "fields": [
+            {
+              "name": "order_id",
+              "type": {
+                "logicalType": "uuid",
+                "type": "string"
+              }
+            },
+            {
+              "name": "load_id",
+              "type": [
+                "null",
+                {
+                  "logicalType": "uuid",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "load_code",
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            {
+              "name": "code",
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            {
+              "name": "created_by",
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            {
+              "name": "customer_id",
+              "type": [
+                "null",
+                {
+                  "logicalType": "uuid",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "created_by_user_id",
+              "type": [
+                "null",
+                {
+                  "logicalType": "uuid",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "updated_by_user_id",
+              "type": [
+                "null",
+                {
+                  "logicalType": "uuid",
+                  "type": "string"
+                }
+              ]
+            },
+            {
+              "name": "created_at",
+              "type": [
+                "null",
+                {
+                  "logicalType": "timestamp-millis",
+                  "type": "long"
+                }
+              ]
+            },
+            {
+              "name": "updated_at",
+              "type": [
+                "null",
+                {
+                  "logicalType": "timestamp-millis",
+                  "type": "long"
+                }
+              ]
+            }
+          ],
+          "name": "OrderCreated",
+          "type": "record"
+        }
+      ]
+    }
+  ]
+}
